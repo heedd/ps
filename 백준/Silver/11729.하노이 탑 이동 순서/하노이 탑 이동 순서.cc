@@ -11,7 +11,7 @@ void func(int a, int b, int n){
     
     // 재귀식
     func(a, 6-a-b, n-1);    // n-1개 원판을 a -> (6-a-b)로 이동
-    cout << a << ' ' << b << '\n';   // n개 원판을 a -> b로 이동
+    cout << a << ' ' << b << '\n';   // n번 원판을 a -> b로 이동
     func(6-a-b, b, n-1);    // n-1개 원판을 (6-a-b) -> b로 이동
 }
 
