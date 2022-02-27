@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// 원판 n개를 a기둥에서 b기둥으로 옮기는 방법 출력
+// 함수의 정의 : 원판 n개를 a기둥에서 b기둥으로 옮기는 방법 출력
 void func(int a, int b, int n){
     // base condition
     if(n == 1) {
