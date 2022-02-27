@@ -1,16 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 using ll = long long;
 
-ll POW(ll a, ll b, ll c){
-    if(b==1) return a%c;  // base condition 수렴
+ll func(ll a, ll b, ll c) {
+    // base condition
+    if (b == 1) return a % c;
     
-    ll val = POW(a, b/2, c);
-    val = val*val % c;
+    ll val = func(a, b/2, c);
+    val = val * val % c;
     
+    // 재귀식
     if(b%2 == 0) return val;
-    else if(b%2 == 1) return val*a % c;
+    else return val * a % c;
 }
 
 int main(void){
@@ -20,5 +21,5 @@ int main(void){
     ll a, b, c;
     cin >> a >> b >> c;
     
-    cout << POW(a, b, c);
+    cout << func(a, b, c);
 }
