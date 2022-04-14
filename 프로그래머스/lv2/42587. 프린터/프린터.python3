@@ -1,0 +1,16 @@
+def solution(p, loc):
+    cnt = 0
+    while p :
+        mx = max(p)
+        if p[0] < mx : #뒤로넘기기
+            p.append(p.pop(0))
+            if loc == 0 : #원하는문서 뒤로넘기기
+                loc = len(p)-1
+            elif loc != 0 : #아닌거 뒤로넘기기
+                loc -= 1
+        elif p[0] >= mx : #출력하기
+            p.pop(0)
+            cnt += 1
+            if loc == 0 : break
+            else : loc -= 1
+    return cnt
