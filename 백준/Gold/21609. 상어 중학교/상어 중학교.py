@@ -61,10 +61,7 @@ def gravity(a):
 
 # 반시계 회전 함수
 def rot90(a):
-    new_a = [[0]*N for _ in range(N)]
-    for i in range(N):
-        for j in range(N):
-            new_a[N-1-j][i] = a[i][j]
+    new_a = list(map(list, zip(*a)))[::-1]
     return new_a
 
 
