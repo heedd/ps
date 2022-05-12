@@ -1,3 +1,6 @@
+from sys import stdin
+input = stdin.readline
+
 T = int(input())
 for _ in range(T):
     # 입력
