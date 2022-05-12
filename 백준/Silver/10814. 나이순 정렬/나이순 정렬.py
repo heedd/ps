@@ -2,8 +2,11 @@ import sys
 input = sys.stdin.readline
 
 n = int(input())
-arr = [list(input().split()) for _ in range(n)]
+arr = []
+for _ in range(n):
+    a, b = input().split()
+    arr.append([int(a), b])
 
-arr.sort(key=lambda x: int(x[0]))
-for item in arr :
-    print(int(item[0]), item[1])
+arr.sort(key=lambda x: x[0])
+for item in arr:
+    print(item[0], item[1])
