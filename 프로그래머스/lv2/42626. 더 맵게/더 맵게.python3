@@ -1,0 +1,16 @@
+from heapq import *
+
+def  solution(scoville, K):
+    answer = 0
+    heapify(scoville)
+    
+    while True :
+        if scoville[0] >= K :
+            return answer
+        else :
+            if len(scoville) == 1 :
+                return -1
+        heappush(scoville, heappop(scoville) + 2*heappop(scoville))
+        answer += 1
+        
+    return answer if len(scoville) != 1 else -1
