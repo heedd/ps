@@ -1,6 +1,6 @@
 # [level 4] 입양 시각 구하기(2) - 59413 
 
-[문제 링크](https://programmers.co.kr/learn/courses/30/lessons/59413?language=mysql) 
+[문제 링크](https://programmers.co.kr/learn/courses/30/lessons/59413) 
 
 ### 성능 요약
 
