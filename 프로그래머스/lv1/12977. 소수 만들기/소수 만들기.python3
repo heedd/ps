@@ -1,0 +1,19 @@
+from itertools import combinations
+
+def isPrime(x) :
+    bool = True
+    for i in range(2, int(x//2)+1) :
+        if x%i == 0  and x != i :
+            bool = False
+            break
+    return bool
+
+def solution(nums):
+    answer = 0
+    arr = list(combinations(nums, 3))
+    for num in arr :
+        x = num[0] + num[1] + num[2]
+        if isPrime(x) :
+            answer += 1
+
+    return answer
