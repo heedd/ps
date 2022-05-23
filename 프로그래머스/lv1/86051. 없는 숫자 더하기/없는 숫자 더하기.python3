@@ -1,0 +1,12 @@
+def solution(numbers):
+    answer = 0
+    
+    freq = [0]*10
+    for i in numbers :
+        freq[i] += 1
+    
+    for i in range(10) :
+        if freq[i] == 0 :
+            answer += i
+    
+    return answer
