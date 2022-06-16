@@ -1,0 +1,42 @@
+from collections import deque
+
+def solution(dartResult):
+    answer = 0
+    
+    s = deque()
+    tmp1, tmp2 = 0, 0
+    
+    for i in range(len(dartResult)) :
+        if dartResult[i] == 'S' :
+            num = dartResult[i-1]
+            if num == '0' and i-1 != 0 :
+                if dartResult[i-2] == '1' :
+                    num = dartResult[i-2:i]
+            s.append(int(num))
+        elif dartResult[i] == 'D' :
+            num = dartResult[i-1]
+            if num == '0' and i-1 != 0 :
+                if dartResult[i-2] == '1' :
+                    num = dartResult[i-2:i]
+            s.append(int(num)**2)
+        elif dartResult[i] == 'T' :
+            num = dartResult[i-1]
+            if num == '0' and i-1 != 0 :
+                if dartResult[i-2] == '1' :
+                    num = dartResult[i-2:i]
+            s.append(int(num)**3)
+        elif dartResult[i] == '*' :
+            if len(s) == 1 :
+                s.append(s.pop()*2)
+            else :
+                tmp1 = s.pop()*2
+                tmp2 = s.pop()*2
+                s.append(tmp2)
+                s.append(tmp1)
+        elif dartResult[i] == '#' :
+            s.append(s.pop()*(-1))
+    
+    while s :
+        answer += s.pop()
+        
+    return answer
