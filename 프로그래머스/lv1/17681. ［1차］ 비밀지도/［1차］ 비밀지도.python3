@@ -2,12 +2,11 @@
 # 벽 1/ 공백 0
 def solution(n, arr1, arr2):
     answer = []
-    a = bin(9)[2:].zfill(5)
-    b = bin(30)[2:].zfill(5)
     
     for i in range(n) :
         tmp = bin(arr1[i] | arr2[i])[2:].zfill(n)
         tmp = tmp.replace('1','#')
         tmp = tmp.replace('0',' ')
         answer.append(tmp)
+    
     return answer
