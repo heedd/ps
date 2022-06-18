@@ -4,7 +4,7 @@ def solution(board, moves):
     answer = 0
     basket = deque()
     new_board = list(map(list, zip(*board)))
-    print(new_board)
+
     for i in moves:
         while True:
             if new_board[i-1]:
