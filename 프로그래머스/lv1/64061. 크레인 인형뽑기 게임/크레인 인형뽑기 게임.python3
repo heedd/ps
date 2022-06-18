@@ -1,0 +1,27 @@
+from collections import deque
+
+def solution(board, moves):
+    answer = 0
+    basket = deque()
+    new_board = list(map(list, zip(*board)))
+    print(new_board)
+    for i in moves:
+        while True:
+            if new_board[i-1]:
+                tmp = new_board[i-1].pop(0)
+            else: break
+            
+            if tmp != 0:
+                if basket:
+                    prev = basket.pop()
+                    if prev == tmp:
+                        answer += 2
+                    else:
+                        basket.append(prev)
+                        basket.append(tmp)
+                else:
+                    basket.append(tmp)
+                break
+    
+                
+    return answer
