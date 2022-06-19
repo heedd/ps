@@ -4,9 +4,9 @@ def solution(s, n):
         if i == ' ': 
             answer += ' '
         elif 'A'<= i <= 'Z':
-            answer += chr((ord(i)-65 + n)%26 + 65)
+            answer += chr((ord(i)-ord('A') + n)%26 + ord('A'))
         elif 'a'<= i <= 'z':
-            answer += chr((ord(i)-97 + n)%26 + 97)
+            answer += chr((ord(i)-ord('a') + n)%26 + ord('a'))
             
             
     return answer
