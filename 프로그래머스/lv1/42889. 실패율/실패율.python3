@@ -1,0 +1,18 @@
+def solution(N, stages):
+    now = [0]*(N+2)
+    arrive = [0]*(N+2)
+    result = {}
+    
+    for i in stages :
+        now[i] += 1
+        for j in range(1,i+1) :
+            arrive[j] += 1
+    
+    for i in range(1, len(now)-1) :
+        if arrive[i] == 0 :
+            result[str(i)] = 0
+        else :
+            result[str(i)] = now[i]/arrive[i]
+    result = sorted(result, key = result.get, reverse=True)
+    result = list(map(int, result))
+    return result
