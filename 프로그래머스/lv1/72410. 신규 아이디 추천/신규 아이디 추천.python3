@@ -1,0 +1,43 @@
+def solution(new_id):
+    # 1번
+    new_id = new_id.lower()
+    
+    # 2번
+    tmp = ''
+    for s in new_id :
+        if s not in "abcdefghijklmnopqrstuvwxyz0123456789-_." :
+            continue
+        tmp += s
+    new_id = tmp
+            
+    # 3번
+    while True:
+        if '..' in new_id :
+            new_id = new_id.replace('..','.')
+        else :
+            break
+        
+    
+    # 4번
+    if new_id != "" :
+        if len(new_id) == 1 :
+            if new_id[0] == '.': new_id = ''
+        else :
+            if new_id[0] == '.': new_id = new_id[1:]
+            if new_id[-1] == '.': new_id = new_id[:-1]
+    
+    # 5번
+    if new_id == "" : new_id = 'a'
+    
+    # 6번
+    if len(new_id) >= 16:
+        new_id = new_id[:15]
+    if new_id[-1] == '.': new_id = new_id[:-1]
+    
+    # 7번
+    if len(new_id) <= 2 :
+        while len(new_id) != 3:
+            new_id += new_id[-1]
+    
+    
+    return new_id
