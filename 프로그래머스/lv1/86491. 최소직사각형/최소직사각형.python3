@@ -1,0 +1,9 @@
+def solution(sizes):
+    answer = 0
+    maximum = 1
+    minimum = 1
+    for i in sizes:
+        maximum = max(maximum, max(i))
+        minimum = max(minimum, min(i))
+    answer = maximum*minimum
+    return answer
