@@ -1,0 +1,7 @@
+from itertools import combinations
+def solution(numbers):
+    answer = []
+    comb = list(combinations(numbers,2))
+    for i in comb :
+        answer.append(i[0] + i[1])
+    return sorted(list(set(answer)))
