@@ -1,0 +1,18 @@
+def solution(id_list, report, k):
+    reported = {}
+    reporter = {}
+    
+    for id in id_list:
+        reported[id] = set()
+        reporter[id] = 0
+    
+    for id in report:
+        id = id.split()
+        reported[id[1]].add(id[0])
+    
+    for key in reported:
+        if len(reported[key]) >= k:
+            for id in reported[key]:
+                reporter[id] += 1
+                
+    return list(reporter.values())
