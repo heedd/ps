@@ -1,10 +1,7 @@
 def solution(id_list, report, k):
-    reported = {}
-    reporter = {}
+    reported = { x:set() for x in id_list} # key:신고당한id, value:신고자id
+    reporter = { x:0 for x in id_list} # key:신고자id, value:메일 수
     
-    for id in id_list:
-        reported[id] = set()
-        reporter[id] = 0
     
     for id in report:
         id = id.split()
