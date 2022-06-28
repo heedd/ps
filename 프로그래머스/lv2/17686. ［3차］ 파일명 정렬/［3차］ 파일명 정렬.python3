@@ -1,0 +1,24 @@
+def segment(files):
+    head, number, tail = '', '', ''
+    files = deque(files)
+    isNumbers = False
+    while files:
+        tmp = files.popleft()
+        if tmp.isdigit():
+            number += tmp
+            isNumbers=True
+        else:
+            if(isNumbers): break
+            head += tmp
+    tail = files
+    
+    return [head, number, tail]
+
+from collections import deque
+def solution(files):
+    answer = []
+    dic = {x:segment(x) for x in files}
+    print(dic.values())
+    answer = sorted(dic, key = lambda x: (dic[x][0].lower(), int(dic[x][1])))
+
+    return answer
