@@ -1,0 +1,8 @@
+def solution(nums):
+    answer = 0
+    spieces = set(nums)
+    if len(nums)//2 > len(spieces):
+        answer = len(spieces)
+    else:
+        answer = len(nums)//2
+    return answer
