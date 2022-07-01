@@ -6,11 +6,11 @@ for test_case in range(1, T + 1):
 
     # 가로 세로 체크
     for i in range(9) :
-        h, v = [], []
+        row, col = [], []
         for j in range(9) :
-            h.append(arr[i][j])
-            v.append(arr[j][i])
-        if len(set(h)) != len(h) or len(set(v)) != len(v) :
+            row.append(arr[i][j])
+            col.append(arr[j][i])
+        if len(set(row)) != len(row) or len(set(col)) != len(col) :
             result = 0
             break
 
@@ -18,11 +18,11 @@ for test_case in range(1, T + 1):
     breaker = False
     for i in range(0,7,3):
         for j in range(0,7,3):
-            s = []
+            box = []
             for k in range(0,3) :
                 for n in range(0,3) :
-                    s.append(arr[i+k][j+n])
-            if len(set(s)) != len(s) :
+                    box.append(arr[i+k][j+n])
+            if len(set(box)) != len(box) :
                 result = 0
                 breaker = True
                 break
