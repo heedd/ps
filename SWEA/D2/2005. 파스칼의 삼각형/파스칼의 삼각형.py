@@ -14,4 +14,4 @@ for test_case in range(1, T + 1):
 
     print('#',str(test_case))
     for i in result:
-        print(*i)
+        print(*i) 
