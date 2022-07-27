@@ -1,6 +1,6 @@
 # [level 2] 오픈채팅방 - 42888 
 
-[문제 링크](https://programmers.co.kr/learn/courses/30/lessons/42888) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42888) 
 
 ### 성능 요약
 
