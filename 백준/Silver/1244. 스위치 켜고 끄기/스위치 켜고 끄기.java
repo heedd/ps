@@ -11,10 +11,10 @@ public class Main {
 
 		// 1. 입력
 		int n = Integer.parseInt(br.readLine());
-		int[] switches = new int[n];
+		int[] switches = new int[n+1];
 
 		StringTokenizer st = new StringTokenizer(br.readLine());
-		for (int i = 0; i < n; i++)
+		for (int i = 1; i < n+1; i++)
 			switches[i] = Integer.parseInt(st.nextToken());
 
 		// 2. switch 바꾸기
@@ -26,16 +26,16 @@ public class Main {
 			int d = 1;
 			
 			if (gen == 1) { // 남자일때
-				for (int j = 0; j < switches.length; j++) {
-					if((j+1)%num == 0)
+				for (int j = 1; j < switches.length; j++) {
+					if( j % num == 0)
 						switches[j] = (switches[j] == 0 ? 1 : 0);
 				}
 			} else { // 여자일때
-				switches[num-1] = (switches[num-1] == 0 ? 1 : 0);
-				while (0<=num-d-1 && num+d-1<n) {
-					if (switches[num-d-1] == switches[num+d-1]) {
-						switches[num-d-1] = (switches[num-d-1] == 0 ? 1 : 0);
-						switches[num+d-1] = switches[num-d-1];
+				switches[num] = (switches[num] == 0 ? 1 : 0);
+				while (1<=num-d && num+d<n+1) {
+					if (switches[num-d] == switches[num+d]) {
+						switches[num-d] = (switches[num-d] == 0 ? 1 : 0);
+						switches[num+d] = switches[num-d];
 						d++;
 					} else
 						break;
@@ -44,9 +44,9 @@ public class Main {
 		}
 
 		// 3. 스위치 출력
-		for (int i = 0; i < switches.length; i++) {
+		for (int i = 1; i < switches.length; i++) {
 			System.out.print(switches[i] + " ");
-			if ((i+1) % 20 == 0)
+			if (i % 20 == 0)
 				System.out.println();
 		}
 	}
