@@ -1,7 +1,7 @@
 def solution(record):
     answer = []
-    act = []
-    uid_dict = {}
+    act = []      # act = [[행동, 유저아이디], [행동, 유저아이디], [행동, 유저아이디]...]
+    uid_dict = {} # uid_dict[유저아이디] = 닉네임
     
     for i in record:
         arr = i.split()
