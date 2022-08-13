@@ -1,13 +1,19 @@
+# 파이썬의 heapq는 최소힙!
+# 시간초과날것같은 정렬문제들 -> heapq 생각해보자
+# import heapq
+# heapq.heappush(넣을힙, 넣을원소)
+# heapq.heappop(heap) : heap에서 최솟값 pop
+
+
 import heapq
 
 n = int(input())
 
 
 # 카드들의 최소heap 구현
-heap = []
-for _ in range(n):
-    card = int(input())
-    heapq.heappush(heap, card)  # 원소를 추가할 heap, 추가할 원소
+
+heap = [int(input()) for _ in range(n)]
+heapq.heapify(heap)
 
 sum = 0
 while len(heap) != 1:
