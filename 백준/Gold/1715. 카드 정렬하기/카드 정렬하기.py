@@ -1,8 +1,11 @@
-# 파이썬의 heapq는 최소힙!
-# 시간초과날것같은 정렬문제들 -> heapq 생각해보자
+# 시간초과날 것같은 정렬문제들 -> heapq 생각해보자
+# 파이썬의 heapq는 최소힙!!! 최대힙을 구현하려면 '-'부호 활용
+# 최대힙이 필요하면 heappush, heappop 전후로 "-"로 부호를 변경하자!
+
 # import heapq
-# heapq.heappush(넣을힙, 넣을원소)
-# heapq.heappop(heap) : heap에서 최솟값 pop
+# heapq.heapify(리스트) : 리스트를 힙정렬해서 힙이되게 한다.
+# heapq.heappush(넣을힙, 넣을원소) : 힙의 성질을 어기지 않도록 새 원소를 삽입
+# heapq.heappop(heap) : 힙에서 최솟값 pop
 
 
 import heapq
