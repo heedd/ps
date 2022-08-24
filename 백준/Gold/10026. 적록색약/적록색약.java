@@ -28,8 +28,9 @@ public class Main {
 			String line = bf.readLine();
 			NMpicture[i] = line.split("");
 			RBpicture[i] = line.split("");
+			//적록색맹인의 picture배열은 G를 R로 대체 (R과 G 구분못하므로)
 			for (int j = 0; j < n; j++) {
-				if (NMpicture[i][j].equals("G")) {
+				if (RBpicture[i][j].equals("G")) {
 					RBpicture[i][j] = "R";
 				}
 			}
@@ -37,8 +38,8 @@ public class Main {
 		}
 		
 		// 2. BFS
-		int NMcnt = 0;	//
-		int RBcnt = 0;	//
+		int NMcnt = 0;	//NM영역 개수 count
+		int RBcnt = 0;	//RB영역 개수 count
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n; j++) {
 				if(!NMpicture[i][j].equals("V")) {
@@ -66,6 +67,7 @@ public class Main {
 			for (int d = 0; d < 4; d++) {
 				int nr = cur[0] + drdc[d][0];
 				int nc = cur[1] + drdc[d][1];
+				//경계검사, 같은영역 색인지검사
 				if(nr<0 || nc<0 || nr>=n || nc>=n || !picture[nr][nc].equals(color)) continue;
 				q.offer(new int[] {nr, nc});
 				picture[nr][nc] = "V";
