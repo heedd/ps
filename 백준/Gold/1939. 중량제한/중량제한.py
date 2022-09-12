@@ -1,3 +1,9 @@
+# 문제 : 중량제한 1939
+# 링크 : https://www.acmicpc.net/problem/1939
+# 아이디어 : 크루스칼+unionFind
+#   - 무향, 가중치 그래프 => MST 활용 의심해보기
+################################################################
+
 import sys
 input = sys.stdin.readline
 n, m = map(int, input().split())
