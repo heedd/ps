@@ -8,15 +8,7 @@ n = int(input())
 current = list(map(int, list(input())))
 current2 = current.copy()
 goal = list(map(int, list(input())))
-# current와 goal 같으면 0, 다르면 1
 
-# if n==2:
-#     if current == [0,0]: print(0)
-#     elif current == [1,1]: print(1)
-#     else: print(-1)
-#
-# else:
-# 1. 첫번째 스위치 안누른 경우
 cnt = 0
 for i in range(1, n):
     if current[i-1] != goal[i-1]:
